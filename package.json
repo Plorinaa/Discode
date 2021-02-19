@@ -1,0 +1,78 @@
+{
+	"name": "discode",
+	"displayName": "Discode",
+	"description": "Discord for VSCode.",
+	"version": "0.0.2",
+	"publisher": "plorina",
+	"repository": {
+		"url": "https://github.com/Plorinaa/discode"
+	},
+	"engines": {
+		"vscode": "^1.53.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "discode.sendMessage",
+				"title": "Discode: Send Message"
+			},
+			{
+				"command": "discode.connect",
+				"title": "Discode: Connect"
+			},
+			{
+				"command": "discode.disconnect",
+				"title": "Discode: Disconnect"
+			}
+		],
+		"configuration": [
+			{
+				"title": "Discode",
+				"properties": {
+					"discode.enabled": {
+						"type": "boolean",
+						"default": true,
+						"description": "Is Discode should enabled on startup?"
+					},
+					"discode.logOrNotification": {
+						"type": "string",
+						"default": "right",
+						"enum": [
+							"Log",
+							"Notification"
+						]
+					},
+					"discode.token": {
+						"type": "string",
+						"default": "Token",
+						"description": "A token for listen messages."
+					}
+				}
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.53.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.19.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"typescript": "^4.1.3",
+		"vscode-test": "^1.5.0"
+	},
+	"dependencies": {
+		"discord.js": "^11.6.4"
+	}
+}
