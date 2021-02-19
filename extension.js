@@ -22,11 +22,6 @@ function setStatus(message, showNotification = true) {
 }
 
 function activate(context) {
-	if (token == undefined || token === "" || token === null || token === "Token") {
-		discodeLog.appendLine("You should enter your token to use extension.");
-		return;
-	}
-
 	let sendMessage = vscode.commands.registerCommand('discode.sendMessage', () => {
 		var canContinue = true;
 		var channels = client.channels.filter(ch => ch.type === 'dm').array();
@@ -70,6 +65,14 @@ function activate(context) {
 		setStatus("Connecting...");
 
 		client = new discord.Client();
+
+		token = config.get("token");
+		logOrNotification = config.get("logOrNotification");
+
+		if (token == undefined || token === "" || token === null || token === "Token") {
+			discodeLog.appendLine("You should enter your token to use extension.");
+			return;
+		}
 
 		client.on('ready', () => setStatus("Connected!"));
 		client.on('disconnect', () => setStatus("Disconnected!"));
