@@ -20,6 +20,9 @@ This extension contributes the following settings:
 ## 0.0.1
 Initial release of Discode.
 
+## 0.0.2
+Small fixes.
+
 ## 1.0.0
 First working version of Discode.
 

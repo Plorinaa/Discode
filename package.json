@@ -2,7 +2,7 @@
 	"name": "discode",
 	"displayName": "Discode",
 	"description": "Discord for VSCode.",
-	"version": "0.0.2",
+	"version": "1.0.0",
 	"publisher": "plorina",
 	"repository": {
 		"url": "https://github.com/Plorinaa/discode"
