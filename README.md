@@ -1,4 +1,4 @@
-# discode README
+# discode
 Chat with your friends on Visual Studio Code!
 
 ## Features
