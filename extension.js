@@ -85,7 +85,7 @@ function activate(context) {
 			let channelType = message.channel.type;
 			if (channelType !== 'text' &&
 				message.author.id !== client.user.id) {
-				let msg = message.author.username + " (" + message.channel + "): " + message.content;
+				let msg = message.author.username + " (" + message.channel + "): " + (message.attachments.size > 0 ? "<" + message.attachments.size + " attachment(s)>" : "") + message.content;
 
 				if (logOrNotification === "Both" || logOrNotification === "Log") discodeLog.appendLine(msg);
 				if (logOrNotification === "Both" || logOrNotification === "Notification") vscode.window.showInformationMessage(msg);
