@@ -46,7 +46,8 @@
 						"default": "right",
 						"enum": [
 							"Log",
-							"Notification"
+							"Notification",
+							"Both"
 						]
 					},
 					"discode.token": {

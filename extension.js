@@ -87,8 +87,8 @@ function activate(context) {
 				message.author.id !== client.user.id) {
 				let msg = message.author.username + " (" + message.channel + "): " + message.content;
 
-				if (logOrNotification === "Log") discodeLog.appendLine(msg);
-				else if (logOrNotification === "Notification") vscode.window.showInformationMessage(msg);
+				if (logOrNotification === "Both" || logOrNotification === "Log") discodeLog.appendLine(msg);
+				if (logOrNotification === "Both" || logOrNotification === "Notification") vscode.window.showInformationMessage(msg);
 			}
 		});
 
