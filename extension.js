@@ -24,11 +24,11 @@ function setStatus(message, showNotification = true) {
 function activate(context) {
 	let sendMessage = vscode.commands.registerCommand('discode.sendMessage', () => {
 		var canContinue = true;
-		var channels = client.channels.filter(ch => ch.type === 'dm').array();
+		var channels = client.channels.filter(ch => ch.type === 'dm' || ch.type === 'group').array();
 		var channelNames = {};
 
 		channels.forEach((channel, index) => {
-			channelNames[channel.recipient.username] = channel;
+			channelNames[channel.type === 'dm' ? channel.recipient.username : channel.name === null ? "Unnamed group" : channel.name] = channel;
 		});
 
 		let userSelection = "";
